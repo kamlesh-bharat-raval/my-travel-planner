@@ -1,0 +1,91 @@
+.navbar {
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent */
+  backdrop-filter: blur(10px); /* Apple style blur */
+  -webkit-backdrop-filter: blur(10px);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  position: sticky; /* Hamesha upar rahega */
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styling */
+.logo {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+}
+
+.logo-bold {
+  font-weight: 800;
+  color: #007bff;
+}
+
+/* Nav Links */
+.nav-right {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #666;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: 0.3s;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+/* Active Page Indicator */
+.nav-link.active {
+  color: #007bff;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #007bff;
+  border-radius: 2px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .nav-right {
+    gap: 15px;
+  }
+  .nav-link {
+    font-size: 0.85rem;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
+}

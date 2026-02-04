@@ -1,0 +1,429 @@
+/* --- GLOBAL LAYOUT --- */
+.details-container {
+    max-width: 1250px;
+    margin: 40px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 360px; /* Sidebar fixed width */
+    gap: 40px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- HERO SECTION --- */
+.details-hero {
+    position: relative;
+    height: 450px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.details-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.location-badge {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 8px 22px;
+    border-radius: 50px;
+    font-weight: 700;
+    color: #3b82f6;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* --- CONTENT STYLING --- */
+.details-header h2 {
+    font-size: 2.8rem;
+    color: #0f172a;
+    margin: 25px 0 12px;
+    letter-spacing: -1px;
+}
+
+.description-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.info-grid {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* --- HOTELS SECTION --- */
+.hotels-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0 20px;
+    color: #0f172a;
+}
+
+.hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.hotel-ad-card {
+    background: white;
+    padding: 22px;
+    border-radius: 20px;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+}
+
+.hotel-ad-card:hover {
+    transform: translateY(-5px);
+    border-color: #3b82f6;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1);
+}
+
+.hotel-price {
+    font-weight: 800;
+    color: #0f172a;
+    font-size: 1.2rem;
+    margin: 10px 0 15px;
+}
+
+.hotel-book-btn {
+    width: 100%;
+    padding: 12px;
+    background: #f1f5f9;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.hotel-book-btn:hover {
+    background: #3b82f6;
+    color: white;
+}
+
+/* --- SIDEBAR & STICKY CARDS --- */
+.details-sidebar {
+    position: sticky;
+    top: 30px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.booking-card {
+    background: #0f172a;
+    color: white;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.main-price {
+    font-size: 2.5rem;
+    font-weight: 900;
+    display: block;
+    margin: 10px 0 25px;
+    color: #60a5fa;
+}
+
+.book-flight-btn {
+    width: 100%;
+    padding: 18px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.book-flight-btn:hover:not(:disabled) {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.plan-full-btn {
+    width: 100%;
+    padding: 18px;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+/* --- MODAL SYSTEM --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.booking-modal {
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+}
+
+.form-group-modal { margin-bottom: 20px; }
+.form-group-modal label {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.9rem; font-weight: 700; color: #475569; margin-bottom: 8px;
+}
+
+.form-group-modal input {
+    width: 100%; padding: 14px; border: 2px solid #f1f5f9;
+    border-radius: 12px; outline: none; font-size: 1rem;
+}
+
+.form-group-modal input:focus { border-color: #3b82f6; background: #f8faff; }
+
+.form-row-modal { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+.confirm-booking-btn {
+    width: 100%; padding: 18px; background: #3b82f6; color: white;
+    border: none; border-radius: 12px; font-weight: 800; cursor: pointer; font-size: 1rem;
+}
+
+/* --- PREMIUM BOARDING PASS (Dublin-London Style) --- */
+.ticket-mode .ticket-container {
+    max-width: 800px;
+    width: 100%;
+}
+
+.boarding-pass {
+    display: flex;
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.ticket-left {
+    flex: 2.5;
+    padding: 35px;
+    border-right: 2px dashed #e2e8f0;
+    position: relative;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    background: #ef4444; /* Airline Red */
+    margin: -35px -35px 30px;
+    padding: 20px 35px;
+    color: white;
+}
+
+.brand { font-weight: 900; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+
+.path-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
+.city-info h1 { font-size: 2.8rem; font-weight: 900; margin: 0; color: #0f172a; }
+.city-info p { color: #64748b; font-weight: 700; margin-top: 5px; }
+
+.plane-path { flex: 1; display: flex; align-items: center; justify-content: center; gap: 15px; color: #cbd5e1; }
+.dots { flex: 1; height: 2px; border-top: 3px dotted #e2e8f0; }
+
+.ticket-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 25px;
+}
+
+.info-item label { display: block; font-size: 0.7rem; color: #94a3b8; font-weight: 800; margin-bottom: 4px; }
+.info-item span { font-weight: 800; color: #1e293b; font-size: 1rem; }
+
+.ticket-right {
+    flex: 1;
+    background: #f8fafc;
+    padding: 35px 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.qr-code {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 800;
+    border-radius: 12px;
+}
+
+.download-ticket-btn {
+    margin-top: 30px;
+    padding: 18px 40px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.close-ticket {
+    position: absolute;
+    top: -50px; right: 0;
+    color: white; background: none; border: none; cursor: pointer;
+}
+
+/* --- ANIMATIONS --- */
+.animate-pop { animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+@keyframes pop { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.spinner { animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 1024px) {
+    .details-container { grid-template-columns: 1fr; }
+    .details-sidebar { position: static; order: 2; }
+    .details-main { order: 1; }
+}
+
+@media (max-width: 768px) {
+    .details-hero { height: 300px; }
+    .details-header h2 { font-size: 2rem; }
+    
+    /* Boarding pass becomes vertical on mobile */
+    .boarding-pass { flex-direction: column; }
+    .ticket-left { border-right: none; border-bottom: 2px dashed #e2e8f0; }
+    .city-info h1 { font-size: 2rem; }
+    .ticket-info-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* --- PRINT LOGIC --- */
+@media print {
+    body * { visibility: hidden; }
+    #printable-ticket, #printable-ticket * { visibility: visible; }
+    #printable-ticket {
+        position: fixed;
+        left: 0; top: 0;
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+    }
+    .download-ticket-btn, .close-ticket { display: none !important; }
+}
+
+/* Flight Animation Styles */
+.flying-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+}
+
+.plane-animation-content {
+  text-align: center;
+  position: relative;
+}
+
+.taking-off-plane {
+  animation: planeFly 2.5s ease-in-out forwards;
+}
+
+.flying-text {
+  margin-top: 2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  animation: textFade 1s infinite alternate;
+}
+
+.cloud-1, .cloud-2 {
+  position: absolute;
+  font-size: 50px;
+  opacity: 0.3;
+}
+
+.cloud-1 { top: -20px; animation: cloudMove 3s linear infinite; }
+.cloud-2 { bottom: 50px; animation: cloudMove 4s linear infinite reverse; }
+
+@keyframes planeFly {
+  0% { transform: translate(-200px, 200px) rotate(-10deg); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translate(800px, -600px) rotate(-30deg); opacity: 1; }
+}
+
+@keyframes cloudMove {
+  from { transform: translateX(300px); }
+  to { transform: translateX(-300px); }
+}
+
+@keyframes textFade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}

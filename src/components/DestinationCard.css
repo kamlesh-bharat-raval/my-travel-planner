@@ -1,0 +1,112 @@
+.dest-card {
+  display: block;
+  background: #ffffff;
+  border-radius: 24px; /* Thoda zyada rounded modern lagta hai */
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid #f1f5f9;
+  position: relative;
+}
+
+.dest-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.15);
+  border-color: #3b82f6;
+}
+
+.img-container {
+  position: relative;
+  height: 240px; /* Thodi height badhayi hai impact ke liye */
+  overflow: hidden;
+  background-color: #f1f5f9; /* Image load hone tak skeleton jaisa dikhega */
+}
+
+/* Glassy Gradient Overlay */
+.img-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
+  pointer-events: none;
+}
+
+.dest-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.dest-card:hover .dest-img {
+  transform: scale(1.15); /* Thoda extra zoom premium feel ke liye */
+}
+
+.flight-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 12px; /* Square-ish rounded cards ke sath match karta hai */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dest-info {
+  padding: 24px;
+}
+
+.dest-info h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+.location-tag {
+  font-size: 0.75rem;
+  background: #eff6ff;
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: #3b82f6; 
+  font-weight: 700;
+}
+
+.short-desc {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 12px 0 24px;
+  line-height: 1.5;
+  display: -webkit-box;
+  /* -webkit-line-clamp: 2;  */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  border-top: 1px solid #f8fafc;
+}
+
+.view-deal {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #3b82f6;
+  letter-spacing: 0.5px;
+}

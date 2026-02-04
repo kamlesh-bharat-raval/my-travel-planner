@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* --- GLOBAL RESET --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+/* --- VARIABLES AND BODY --- */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --text-color: #343a40;
+  --muted-text: #6c757d;
+  --border-color: #dee2e6;
+  --font-stack: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: var(--font-stack);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: #fff;
+  /* CRITICAL: Prevents horizontal scrollbar */
+  overflow-x: hidden; 
+  scroll-behavior: smooth;
+}
+
+/* --- TYPOGRAPHY & INTERACTIVE ELEMENTS --- */
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #212529;
+}
+
+/* Utility Class */
+.muted {
+  color: var(--muted-text);
+  font-size: 0.9em;
+}
+
+/* Primary Button Styling */
+button.primary {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  
+  /* Styling complete kiya */
+  background-color: var(--primary-color); 
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.primary:hover {
+  background-color: #0056b3;
+}
+
+/* src/index.css */
+
+/* --- GLOBAL IMAGE SAFETY RULE --- */
+img {
+    /* CRITICAL: Ensures no image overflows screen width */
+    max-width: 100%; 
+    height: auto;
+    display: block; /* Removes unwanted space below images */
+}
+
+/* ... rest of your index.css code ... */
